@@ -1,0 +1,9 @@
+*{
+  font-size: 20px;
+}
+fieldset {
+  width: 50%; /* Adjust the percentage or use a specific value like pixels */
+  margin: 0 auto;
+  margin-top: 50px; /* Centers the fieldset horizontally, optional */
+}
+
