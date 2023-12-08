@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import Docxtemplater from "docxtemplater";
 import PizZip from "pizzip";
 import PizZipUtils from "pizzip/utils/index.js";

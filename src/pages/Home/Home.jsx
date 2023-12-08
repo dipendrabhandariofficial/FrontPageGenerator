@@ -11,7 +11,7 @@ const Home = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const newStudent = { name, roll };
-    setStudentList([...studentList, newStudent]);
+    // setStudentList([...studentList, newStudent]);
     setSubmitted(true);
   };
 
