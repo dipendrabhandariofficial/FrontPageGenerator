@@ -8,8 +8,8 @@ function loadFile(url, callback) {
   PizZipUtils.getBinaryContent(url, callback);
 }
 
-export const Frontpage = ({ name, roll,subject }) => {
-  console.log(name, roll,subject);
+export const Frontpage = ({ name, roll, subject,teacher }) => {
+  console.log(name, roll, subject,teacher);
   const generateDocument = () => {
     loadFile("/front.docx", function (error, content) {
       if (error) {
@@ -25,20 +25,21 @@ export const Frontpage = ({ name, roll,subject }) => {
       doc.render({
         name: name,
         roll: roll,
-        subject :subject,
+        subject: subject,
+        teacher:teacher,
       });
       const blob = doc.getZip().generate({
         type: "blob",
         mimeType:
           "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       }); //Output the document using Data-URI
-      saveAs(blob, {name}+".docx");
+      saveAs(blob, name+".docx");
     });
   };
 
   return (
     <div className="p-2">
-      <button onClick={generateDocument}>Generate document</button>
+      <button onClick={generateDocument}><h1 style={{backgroundColor:"beige"}}>Generate FrontPage</h1></button>
     </div>
   );
 };

@@ -5,7 +5,8 @@ import FrontPage from "../Front/FrontPage";
 const Home = () => {
   const [name, setName] = useState("");
   const [roll, setRoll] = useState("");
-  const [subject, setSubject]= useState("");
+  const [subject, setSubject] = useState("");
+  const [teacher,setTeacher]=useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
@@ -13,21 +14,38 @@ const Home = () => {
     event.preventDefault();
 
     // Basic form validation
-    if (!name.trim() || !roll.trim()) {
+    if (!name.trim() || !roll.trim() || !subject.trim()) {
       setError("Please fill out all fields.");
       return;
     }
+
+    if (!/^[A-Za-z ]*$/.test(name)) {
+      setError("Name only contains characters");
+      return;
+    }
+    if (subject === "Computer Security") {
+      setTeacher("Ram bahadur chand");
+    } else if (subject === "Software Engineering") {
+      setTeacher("hari");
+    }
+    
 
     // Additional validation if needed...
 
     // If validation passes, submit the form
     setSubmitted(true);
   };
+  
 
   return (
     <>
       {submitted ? (
-        <FrontPage name={name || "No Name"} roll={roll || "No Roll"} subject={subject || "no subject"} />
+        <FrontPage
+          name={name || "No Name"}
+          roll={roll || "No Roll"}
+          subject={subject || "No Subject"}
+          teacher={teacher||"No Teacher"}
+        />
       ) : (
         <form onSubmit={handleSubmit}>
           <fieldset>
@@ -53,33 +71,30 @@ const Home = () => {
                   />
                 </div>
               </li>
-              <li>
-      <div>
-        <label>
-          Subject: Computer Security
-          <input
-            type="radio"
-            value="Computer Security"
-            name="subject"
-            //checked={selectedSubject === 'Computer Security'}
-            onChange={(e) => setSubject(e.target.value)}
-          />
-        </label>
-        <br></br>
-        <label>
-          Software Engineering
-          <input
-            type="radio"
-            value="Software Engineering"
-            name="subject"
-            //checked={selectedSubject === 'Software Engineering'}
-            onChange={(e) => setSubject(e.target.value)}
-          />
-        </label>
-      </div>
-    </li>
-            </ul>
+              </ul>
+              Subject:
+              <br/>
+              <input
+                      type="radio"
+                      value="Computer Security"
+                      name="subject"
+                      onChange={(e) => setSubject(e.target.value)}
+                    />
+                  <label>
+                    Computer Security
+                    </label>
 
+                    <br/>
+                    <input
+                      type="radio"
+                      value="Software Engineering"
+                      name="subject"
+                      onChange={(e) => setSubject(e.target.value)}
+                    />
+                  <label>
+                    Software Engineering
+                    </label>
+                    
             {error && <p style={{ color: "red" }}>{error}</p>}
 
             <div>

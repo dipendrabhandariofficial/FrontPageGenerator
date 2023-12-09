@@ -15,6 +15,9 @@
     margin-top: 20px;
     
   }
+  input[type=radio]:focus {
+    border: 3px solid #555;
+  }
   
   input[type=submit]:hover {
     background-color: #45a049;
@@ -29,7 +32,7 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: azure;
+    background-color: rgb(255, 240, 250);
   }
 
   form {
@@ -53,5 +56,5 @@
 
   fieldset
   {
-    background-color:white ;
+    background-color:rgba(255, 187, 0, 0.528) ;
   }
