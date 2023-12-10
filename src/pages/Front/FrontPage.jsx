@@ -8,7 +8,7 @@ function loadFile(url, callback) {
   PizZipUtils.getBinaryContent(url, callback);
 }
 
-export const Frontpage = ({ name, roll, subject,teacher }) => {
+export const Frontpage = ({ name, roll, subject,teacher,course }) => {
   console.log(name, roll, subject,teacher);
   const generateDocument = () => {
     loadFile("/front.docx", function (error, content) {
@@ -27,6 +27,7 @@ export const Frontpage = ({ name, roll, subject,teacher }) => {
         roll: roll,
         subject: subject,
         teacher:teacher,
+        course:course,
       });
       const blob = doc.getZip().generate({
         type: "blob",
@@ -39,7 +40,7 @@ export const Frontpage = ({ name, roll, subject,teacher }) => {
 
   return (
     <div className="p-2">
-      <button onClick={generateDocument}><h1 style={{backgroundColor:"beige"}}>Generate FrontPage</h1></button>
+      <button onClick={generateDocument}><h1 >Generate FrontPage</h1></button>
     </div>
   );
 };

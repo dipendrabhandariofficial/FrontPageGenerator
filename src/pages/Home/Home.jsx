@@ -7,6 +7,7 @@ const Home = () => {
   const [roll, setRoll] = useState("");
   const [subject, setSubject] = useState("");
   const [teacher,setTeacher]=useState("");
+  const [course,setCourse]=useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
@@ -24,13 +25,14 @@ const Home = () => {
       return;
     }
     if (subject === "Computer Security") {
-      setTeacher("Ram bahadur chand");
-    } else if (subject === "Software Engineering") {
-      setTeacher("hari");
+      setTeacher("Milan Raj Nepal");
+      setCourse("IT 225: Computer Security and Cyber Law");
+    } 
+    else if (subject === "Software Engineering") {
+      setTeacher("Manoj Giri");
+      setCourse("IT 224: Software Engineering");
     }
-    
-
-    // Additional validation if needed...
+        // Additional validation if needed...
 
     // If validation passes, submit the form
     setSubmitted(true);
@@ -45,6 +47,7 @@ const Home = () => {
           roll={roll || "No Roll"}
           subject={subject || "No Subject"}
           teacher={teacher||"No Teacher"}
+          course={course ||""}
         />
       ) : (
         <form onSubmit={handleSubmit}>
