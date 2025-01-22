@@ -5,7 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: #f8f8f8; /* Off-white background */
+  background: linear-gradient(135deg, #f3e7e9, #e3f2fd);
   font-family: Arial, sans-serif;
 }
 
@@ -30,20 +30,17 @@ legend {
 
 /* Input Fields */
 input[type="text"],
-input[type="number"],
-textarea {
+input[type="number"] {
   width: calc(100% - 16px);
   padding: 10px;
   margin: 10px 0;
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: #d3d3d3; /* Gray background for textarea */
   transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
-input[type="number"]:focus,
-textarea:focus {
+input[type="number"]:focus {
   border-color: #555;
 }
 
@@ -99,10 +96,4 @@ ul {
 
 li {
   margin-bottom: 12px;
-}
-
-/* Textarea Specific Styling */
-textarea {
-  height: 100px;
-  resize: vertical; /* Allow vertical resizing only */
 }
