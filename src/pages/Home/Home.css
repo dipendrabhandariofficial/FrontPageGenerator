@@ -5,85 +5,74 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: #f9fafb; /* Subtle off-white background */
-  font-family: "Inter", sans-serif; /* Clean and modern font */
-  color: #333;
+  background: #f8f8f8; /* Off-white background */
+  font-family: Arial, sans-serif;
 }
 
 /* Form Styling */
 form {
-  width: 400px;
-  text-align: center;
+  width: 500px;
+  text-align: left;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
   margin: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-form:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Legend Styling */
 legend {
-  color: #0077ff;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  color: rgb(0, 145, 255);
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 /* Input Fields */
 input[type="text"],
 input[type="number"],
 textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 12px 0;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  background-color: #f3f4f6; /* Light gray for inputs */
-  font-size: 16px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: calc(100% - 16px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #d3d3d3; /* Gray background for textarea */
+  transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus,
 textarea:focus {
-  border-color: #0077ff;
-  box-shadow: 0 0 8px rgba(0, 119, 255, 0.2);
-  background-color: #ffffff;
+  border-color: #555;
 }
 
 /* Radio Buttons */
 input[type="radio"] {
   margin-right: 8px;
-  accent-color: #0077ff; /* Modern radio button color */
 }
 
 label {
+  margin-right: 20px;
   font-size: 16px;
-  color: #555;
+  color: #333;
 }
 
 /* Submit Button */
 input[type="submit"] {
-  background-color: #0077ff;
+  background-color: #008cba;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 15px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
+  margin-top: 20px;
   font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-  background-color: #0056cc;
-  box-shadow: 0 5px 15px rgba(0, 119, 255, 0.3);
+  background-color: #005f73;
 }
 
 /* Error Message */
@@ -98,8 +87,8 @@ p {
 fieldset {
   border: none;
   padding: 20px;
-  background-color: #f3f4f6; /* Subtle gray for fieldset */
-  border-radius: 12px;
+  background-color: rgba(255, 187, 0, 0.1);
+  border-radius: 8px;
 }
 
 /* List Styling */
